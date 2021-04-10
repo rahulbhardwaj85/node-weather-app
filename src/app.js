@@ -10,6 +10,7 @@ console.log(__dirname);   //node give two var. in which getting path
 //console.log(path.join(__dirname,"../templates"));
 
 const app = express();
+const port = process.env.PORT || 3000
 
 // define path to ecpress config
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -139,6 +140,6 @@ app.get('*', (req, res) => {
 
 
 
-app.listen(3000, () => {
-    console.log("App is running on port 3000")
+app.listen(port, () => {
+    console.log("App is running on port "+port)
 })

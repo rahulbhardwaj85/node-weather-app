@@ -10,9 +10,12 @@ const callApi = (locationSearch = "", callback) => {
     if (locationSearch === "") {
         return callback("Please Enter Location Name", undefined);
     }
-
-    fetch('http://localhost:3000/weather?address=' + locationSearch).then((response) => {
-        response.json().then((data) => {
+//when only run on local
+ //   fetch('http://localhost:3000/weather?address=' + locationSearch).then((response) => {
+   
+ // when run on local and heroku
+ fetch('http://localhost:3000/weather?address=' + locationSearch).then((response) => { 
+ response.json().then((data) => {
             if (data.error) {
                 console.log(data.error);
                 callback(data.error, undefined)
