@@ -14,7 +14,7 @@ const callApi = (locationSearch = "", callback) => {
  //   fetch('http://localhost:3000/weather?address=' + locationSearch).then((response) => {
    
  // when run on local and heroku
- fetch('http://localhost:3000/weather?address=' + locationSearch).then((response) => { 
+ fetch('/weather?address=' + locationSearch).then((response) => { 
  response.json().then((data) => {
             if (data.error) {
                 console.log(data.error);
